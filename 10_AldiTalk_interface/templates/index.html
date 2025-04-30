@@ -1,0 +1,111 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aldi Talk</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+  <script src="https://kit.fontawesome.com/17b7f68077.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="app-container">
+    <div class="container">
+      <div class="header">
+        <h1>Aldi Talk</h1>
+        <div class="nav-buttons">
+          <div class="theme-toggle">
+            <span>Light</span>
+            <label class="switch">
+              <input type="checkbox" id="themeSwitch" onchange="toggleTheme()">
+              <span class="slider"></span>
+            </label>
+            <span>Dark</span>
+          </div>
+          <button class="icon-button" onclick="window.location.href='{{ url_for('about') }}'">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        </div>
+      </div>
+      <div class="content">
+        <div id="options">
+          <div id="options-left">
+            <label for="translateFrom" class="Translate">Translate from:</label>
+            <select id="translateFrom" class="dropdown-select">
+              <option value="auto">Auto (English | 中文 | Bahasa Melayu | தமிழ்)</option>
+              <option value="yue-CN">Cantonese</option>
+              <option value="hi-IN">Hindi</option>
+              <option value="zh-hokkien">Hokkien (ONLY AUDIO)</option>
+            </select>
+          </div>
+          <div id="options-right">
+            <label for="translateTo" class="Translate">Translate to:</label>
+            <select id="translateTo" class="dropdown-select">
+              <option value="en-US">English</option>
+              <option value="zh-CN">中文</option>
+              <option value="ms-MY">Bahasa Melayu</option>
+              <option value="ta-IN">தமிழ்</option>
+              <option value="yue-CN">Cantonese</option>
+              <option value="hi-IN">Hindi</option>
+              <option value="zh-hokkien">Hokkien</option>
+            </select>
+          </div>
+          <div id="InputTextContainer" class="input-with-audio">
+            <button id="recordButton" class="record-button" onclick="startRecording()">
+              <i class="fa-solid fa-microphone"></i>
+            </button>
+            <div id="recordingIndicator" class="recording-indicator hidden"></div>
+            <textarea id="inputText" class="text-input" placeholder="Enter text to translate..."></textarea>
+          </div>
+          <div id="TranslateClear">
+            <div class="translate-button" onclick="translateText()">
+              Translate <i class="fa-solid fa-language"></i>
+            </div>
+            <div class="clear-button" onclick="clearTranslation()">
+              Clear Text <i class="fa-solid fa-xmark"></i>
+            </div>
+          </div>
+          <div id="OutputTextContainer">
+            <div id="playTTSContainer">
+              <button id="playAudioButton" class="play-tts-button" onclick="playStoredAudio()" disabled>
+                Play Audio 🔊
+              </button>
+            </div>            
+            <textarea id="outputText" class="text-input" placeholder="Translated text will appear here..." readonly></textarea>
+          </div>
+          <div id="commonPhrasesContainer">
+            <h3>Common Translations</h3>
+            <div class="phrase-list">
+              <div class="phrase-item">
+                <p>How are you?</p>
+                <button class="phrase-translate-button" onclick="translatePhrase('How are you?')">Translate</button>
+              </div>
+              <div class="phrase-item">
+                <p>Do you need help?</p>
+                <button class="phrase-translate-button" onclick="translatePhrase('Do you need help?')">Translate</button>
+              </div>
+              <div class="phrase-item">
+                <p>Would you like something to drink?</p>
+                <button class="phrase-translate-button" onclick="translatePhrase('Would you like something to drink?')">Translate</button>
+              </div>
+              <div class="phrase-item">
+                <p>Are you comfortable?</p>
+                <button class="phrase-translate-button" onclick="translatePhrase('Are you comfortable?')">Translate</button>
+              </div>
+              <div class="phrase-item">
+                <p>Have a good day!</p>
+                <button class="phrase-translate-button" onclick="translatePhrase('Have a good day!')">Translate</button>
+              </div>
+            </div>
+            <!-- New button to add additional phrases -->
+            <div id="addPhraseContainer">
+              <button class="add-phrase-button" onclick="addNewPhrase()">Add Another Phrase</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

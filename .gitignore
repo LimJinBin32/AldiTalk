@@ -1,0 +1,6 @@
+.DS_Store
+10_AldiTalk_interface/AldiTalk/.env
+10_AldiTalk_interface/AldiTalk/.env
+.env
+__pycache__/
+*.pyc

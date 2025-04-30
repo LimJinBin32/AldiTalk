@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+  <script src="{{ url_for('static', filename='about.js') }}"></script>
+
+</head>
+
+<body>
+  <div class="app-container">
+    <div class="header">
+      <a class="back-button" href="{{ url_for('index') }}">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 12H5M12 5l-7 7 7 7" />
+        </svg>
+        Back to Cover Page
+      </a>
+      <div class="theme-toggle">
+        <span>Light</span>
+        <label class="switch">
+          <input type="checkbox" id="themeSwitch" onchange="toggleTheme()">
+          <span class="slider"></span>
+        </label>
+        <span>Dark</span>
+      </div>
+    </div>
+
+    <div class="section" id="section-plant" onclick="toggleSection(this)">
+      <h2 class="section-header">Display Languages <span class="arrow-icon">▼</span></h2>
+      <div class="section-content">
+        <p>Below are some common languages:</p>
+        <div class="language-grid" id="language-grid"></div>
+      </div>
+    </div>
+
+
+    <div class="section" id="section-howitworks" onclick="toggleSection(this)">
+      <h2 class="section-header">How it Works <span class="arrow-icon">▼</span></h2>
+      <div class="section-content"> 
+        <section id="how-it-works" class="how-it-works-section">
+          <h3>How It Works</h3>
+          
+          <p>This app integrates speech-to-text, text translation, and text-to-speech technologies to provide seamless language translation and communication. Here's a step-by-step overview:</p>
+      
+          <h4>1. Select Languages</h4>
+          <p>Choose the source language and the target language for translation using the dropdown menus at the top of the app interface.</p>
+      
+          <h4>2. Input or Record Text</h4>
+          <p>Type your text directly in the input box or press the microphone button to record your speech. The app supports automatic language detection for speech input.</p>
+      
+          <h4>3. Translate Text</h4>
+          <p>Click the "Translate" button to process the input. The app uses Azure Cognitive Services and custom APIs to provide accurate translations in real-time.</p>
+      
+          <h4>4. View Translations</h4>
+          <p>The translated text is displayed in the output area. If a common phrase is selected, the app populates both input and output areas accordingly.</p>
+      
+          <h4>5. Play Audio (Optional)</h4>
+          <p>For supported languages, you can click the "Play Audio" button to listen to the translated text read aloud.</p>
+      
+          <h4>6. Clear Text</h4>
+          <p>Use the "Clear Text" button to reset both input and output areas, allowing you to start a new translation task.</p>
+      </section>
+      
+      </div>
+    </div>    
+
+    <div class="section" id="section-aboutus" onclick="toggleSection(this)">
+      <h2 class="section-header">About Us <span class="arrow-icon">▼</span></h2>
+      <div class="section-content">
+        <h3>About Us</h3>
+        <p>At <strong>Azure Sage</strong>, we are dedicated to revolutionizing communication through cutting-edge 
+        <strong>speech-to-speech translation technology</strong>. Our project is designed to bridge language barriers, 
+        particularly for elderly residents at <strong>Apex Harmony Lodge (AHL)</strong>, Singapore’s first purpose-built 
+        home for individuals with dementia.</p>
+
+        <h3>Our Mission</h3>
+        <p>Our goal is to <strong>enhance communication</strong> between caregivers and residents by developing a 
+        <strong>real-time, AI-powered translation tool</strong>. Many elderly individuals communicate in 
+        <strong>local dialects</strong> such as <strong>Hokkien and Cantonese</strong>, which caregivers may not 
+        understand. This language barrier can lead to <strong>misunderstandings and a reduced quality of care</strong>. 
+        Azure Sage is committed to <strong>bridging this gap</strong>, ensuring that every resident’s needs and preferences 
+        are clearly understood.</p>
+
+        <h3>Why It Matters</h3>
+        <p><strong>Language should never be a barrier to care.</strong> By implementing <strong>speech-to-speech 
+        translation</strong>, we empower caregivers to <strong>communicate effectively</strong> with residents, fostering 
+        <strong>trust, comfort, and better well-being</strong> for individuals with dementia. Our solution aligns with 
+        <strong>AHL’s mission of person-centered care</strong>, enhancing the quality of life for residents and 
+        <strong>improving caregiving efficiency</strong>.</p>
+
+        <h3>Our Commitment</h3>
+        <p>Azure Sage is committed to <strong>continuous improvement</strong>. Our team actively researches 
+        <strong>data augmentation, model fine-tuning, and real-time performance optimization</strong> to ensure that 
+        our translation system remains <strong>accurate, efficient, and accessible</strong> for caregivers and residents 
+        alike.</p>
+
+        <p>Join us in <strong>breaking down language barriers</strong>—because <strong>everyone deserves to be heard and understood</strong>.</p>
+        <div class="language-grid" id="language-grid"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>

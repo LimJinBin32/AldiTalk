@@ -1,0 +1,15 @@
+Flask
+flask-cors
+python-dotenv
+requests
+azure-cognitiveservices-speech
+openai
+transformers
+torch
+numpy
+sounddevice
+scipy
+flask-cors
+pydub  
+soundfile  
+ffmpeg
