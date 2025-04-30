@@ -128,6 +128,7 @@ python app.py
 - [Lim Jin Bin](https://github.com/LimJinBin32)  
 - [Alexander Chan](https://github.com/Redbeanchan)  
 - [Mohammad Habib](https://github.com/habibmohammad35) 
+
 Data soucring and engineering is mostly done by **Min** while video, model training, Flask integration, and UI/UX were jointly developed.
 
 ---
