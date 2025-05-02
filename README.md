@@ -103,13 +103,20 @@ cd AldiTalk
 cd 10_AldiTalk_Interface
 ```
 2. Create `.env` with your Azure credentials
-3. Install dependencies:
+3. Create a Python or Anaconda virtual environment.
+4. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-4. Run Flask app:
+5. Run Flask app:
 ```bash
 python app.py
+```
+6. (optional) If you want to run the notebooks, please install the necessay libiraries as well.
+```bash
+pip install cap_from_youtube yt-dlp opencv-python tqdm azure-cognitiveservices-vision-computervision msrest pandas transformers accelerate torch ipython
+pip install git+https://github.com/your-repo/cap_from_youtube.git
+apt-get install ffmpeg
 ```
 
 ---
